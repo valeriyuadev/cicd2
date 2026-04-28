@@ -1,0 +1,4 @@
+TODO
+1 - push test app
+	
+2 - when push to some branch than make docker image	
