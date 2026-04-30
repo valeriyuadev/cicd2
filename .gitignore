@@ -1,3 +1,6 @@
+# self-hosted runner
+/actions-runner
+
 # compiled output
 /dist
 /node_modules

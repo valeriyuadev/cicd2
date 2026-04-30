@@ -5,3 +5,17 @@ TODO
 
 actions list
 https://github.com/marketplace?query=setup&type=actions
+
+3 - Self hosted runner
+
+mkdir actions-runner; cd actions-runner
+
+https://github.com/valeriyuadev/cicd2/settings/actions/runners/new?arch=x64&os=win
+
+# Run it!
+$ ./run.cmd
+Copied! 
+Using your self-hosted runner
+
+# Use this YAML in your workflow file for each job
+runs-on: self-hosted
