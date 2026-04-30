@@ -1,0 +1,31 @@
+# for docker build
+name: Build
+on:
+    push:
+        branches: [ master ]
+jobs:
+    build:
+        runs-on: self-hosted
+        steps:
+            # https://github.com/marketplace/actions/docker-setup-qemu
+            -
+                name: Set up QEMU
+                uses: docker/setup-qemu-action@v4
+
+            # https://github.com/marketplace/actions/docker-setup-buildx 
+            -
+                name: Set up Docker Buildx
+                uses: docker/setup-buildx-action@v4
+            # https://github.com/marketplace/actions/build-and-push-docker-images 
+            -
+                name: Build and push
+                uses: docker/build-push-action@v7
+                with:
+                    file: Dockerfile
+                    # build our image without pushing it 
+                    push: false
+                    # тогда необходимо залогиниться там,
+                    # куда будет запушен образ
+                    # например на dockerhub
+                    # push: true
+                    tags: user/app:latest   
